@@ -1,0 +1,49 @@
+// index.html <!doctype html>
+
+<html lang="ne">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nep-X Trade Clone</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <div id="auth-section">
+    <h1>Nep-X Trade Clone</h1>
+    <div id="login-form" class="card">
+      <input id="login-email" placeholder="Email" />
+      <input id="login-pass" type="password" placeholder="Password" />
+      <button id="btn-login">Login</button>
+      <p>Don't have account? <a href="#" id="show-register">Register</a></p>
+      <p id="auth-msg" class="error"></p>
+    </div>
+    <div id="register-form" class="card hidden">
+      <input id="reg-name" placeholder="Full name" />
+      <input id="reg-email" placeholder="Email" />
+      <input id="reg-pass" type="password" placeholder="Password" />
+      <button id="btn-register">Register</button>
+      <p>Already have account? <a href="#" id="show-login">Login</a></p>
+    </div>
+  </div>
+  <div id="app-section" class="hidden">
+    <div class="card">
+      <h2>Welcome, <span id="user-name"></span></h2>
+      <p>Wallet: Rs. <b id="user-balance">0</b></p>
+      <div id="packages"></div>
+      <button id="btn-recharge-view">Withdraw</button>
+      <button id="btn-history-view">History</button>
+      <button id="btn-logout" class="danger">Logout</button>
+    </div>
+    <div id="withdraw-card" class="card hidden"></div>
+    <div id="history-card" class="card hidden"></div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>/* style.css */ body { font-family: 'Arial', sans-serif; background: linear-gradient(135deg, #007bff, #00bfff); display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; color: #fff; } .wrap { width: 360px; } .card { background: rgba(255, 255, 255, 0.12); padding: 18px; border-radius: 12px; margin-bottom: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.3); transition: transform 0.2s; } .card:hover { transform: translateY(-4px); } input { width: 100%; padding: 10px; margin: 8px 0; border-radius: 8px; border: none; outline: none; } button { width: 100%; padding: 10px; border-radius: 8px; border: none; background: #fff; color: #007bff; font-weight: 700; cursor: pointer; margin-top: 6px; transition: background 0.2s, color 0.2s; } button:hover { background: #007bff; color: #fff; } button.danger { background: #ff6b6b; color: white; } .hidden { display: none; } .error { color: #ffdddd; } #packages .package-card { background: rgba(255, 255, 255, 0.2); padding: 12px; margin: 8px 0; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; } #packages button { width: auto; padding: 6px 12px; font-size: 14px; } #withdraw-card, #history-card { margin-top: 12px; } #withdraw-card input, #history-card input { margin-bottom: 6px; }
+
